@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>main.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #cc7832;}
+.s4 { color: #6897bb;}
+.s5 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.cpp</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;iostream&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;stdio.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;string.h&gt;</span>
+
+<span class="s3">static int </span><span class="s1">choice</span><span class="s3">;</span>
+
+<span class="s3">void </span><span class="s1">encrypt(</span><span class="s3">char </span><span class="s1">password[]</span><span class="s3">,int </span><span class="s1">key)</span>
+<span class="s1">{</span>
+    <span class="s3">unsigned int </span><span class="s1">i</span><span class="s3">;</span>
+    <span class="s3">for</span><span class="s1">(i=</span><span class="s4">0</span><span class="s3">;</span><span class="s1">i&lt;strlen(password)</span><span class="s3">;</span><span class="s1">++i)</span>
+    <span class="s1">{</span>
+        <span class="s1">password[i] = password[i] - key</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+<span class="s3">void </span><span class="s1">decrypt(</span><span class="s3">char </span><span class="s1">password[]</span><span class="s3">,int </span><span class="s1">key)</span>
+<span class="s1">{</span>
+    <span class="s3">unsigned int </span><span class="s1">i</span><span class="s3">;</span>
+    <span class="s3">for</span><span class="s1">(i=</span><span class="s4">0</span><span class="s3">;</span><span class="s1">i&lt;strlen(password)</span><span class="s3">;</span><span class="s1">++i)</span>
+    <span class="s1">{</span>
+        <span class="s1">password[i] = password[i] + key</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+<span class="s3">int </span><span class="s1">main() {</span>
+
+    <span class="s5">//0XABBBFF</span>
+    <span class="s5">//0XABBFF</span>
+    <span class="s5">//0XABFF</span>
+    <span class="s5">//0XAFF</span>
+    <span class="s5">//0XFF</span>
+
+    <span class="s3">while </span><span class="s1">(</span><span class="s3">true</span><span class="s1">) {</span>
+        <span class="s3">char </span><span class="s1">password[</span><span class="s4">20</span><span class="s1">]</span><span class="s3">;</span>
+
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">=========================== PASSWORD ENCRYPTION AND DECRYPTION WITH SEED ===========================</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s3">;</span>
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n </span><span class="s2">Enter your choices: </span><span class="s3">\n</span><span class="s2">1. Encrypt Password </span><span class="s3">\n</span><span class="s2">2. Decrypt Password </span><span class="s3">\n</span><span class="s2">3. Generate Seed Password </span><span class="s3">\n</span><span class="s2">4. Exit Program</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s3">;</span>
+        <span class="s1">scanf(</span><span class="s2">&quot;%d&quot;</span><span class="s3">, </span><span class="s1">&amp;choice)</span><span class="s3">;</span>
+
+        <span class="s3">switch </span><span class="s1">(choice) {</span>
+            <span class="s3">case </span><span class="s4">1</span><span class="s1">:</span>
+                <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">&quot;&quot;Enter the password: &quot;</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">scanf(</span><span class="s2">&quot;%s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s1">printf(</span><span class="s2">&quot;Password = %s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s1">encrypt(password</span><span class="s3">, </span><span class="s4">0xFF</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">&quot;&quot;Encrypted value = %s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s1">decrypt(password</span><span class="s3">, </span><span class="s4">0XFF</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">&quot;&quot;Decrypted value = %s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s3">break;</span>
+
+            <span class="s3">case </span><span class="s4">2</span><span class="s1">:</span>
+                <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">&quot;&quot;Enter the decryption: &quot;</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">scanf(</span><span class="s2">&quot;%s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s1">printf(</span><span class="s2">&quot;Password = %s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s1">decrypt(password</span><span class="s3">, </span><span class="s4">0xFF</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">&quot;&quot;Decrypted value = %s&quot;</span><span class="s3">, </span><span class="s1">password)</span><span class="s3">;</span>
+                <span class="s3">break;</span>
+
+            <span class="s3">case </span><span class="s4">3</span><span class="s1">:</span>
+                <span class="s3">int </span><span class="s1">password_length</span><span class="s3">;</span>
+                <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">Enter the length of the password: &quot;</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">scanf(</span><span class="s2">&quot;%d&quot;</span><span class="s3">, </span><span class="s1">&amp;password_length)</span><span class="s3">;</span>
+
+                <span class="s3">char </span><span class="s1">password_data[] =</span>
+                        <span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span>
+                        <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+                        <span class="s2">&quot;1234567890&quot;</span><span class="s3">;</span>
+
+                <span class="s3">if </span><span class="s1">(password_length &gt;= </span><span class="s4">5 </span><span class="s1">&amp;&amp; password_length &lt;= </span><span class="s4">20</span><span class="s1">) {</span>
+                    <span class="s1">srand(time(NULL))</span><span class="s3">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;Password: &quot;</span><span class="s1">)</span><span class="s3">;</span>
+                    <span class="s3">for </span><span class="s1">(</span><span class="s3">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s3">; </span><span class="s1">i &lt; password_length</span><span class="s3">; </span><span class="s1">i++) {</span>
+                        <span class="s1">printf(</span><span class="s2">&quot;%c&quot;</span><span class="s3">, </span><span class="s1">password_data[rand() % </span><span class="s3">sizeof</span><span class="s1">(password_data) - </span><span class="s4">1</span><span class="s1">])</span><span class="s3">;</span>
+                    <span class="s1">}</span>
+                <span class="s1">} </span><span class="s3">else </span><span class="s1">{</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s3">\n</span><span class="s2">Invalid password length</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s3">;</span>
+                    <span class="s1">main()</span><span class="s3">;</span>
+                <span class="s1">}</span>
+                <span class="s3">break;</span>
+        <span class="s1">}</span>
+        <span class="s3">if </span><span class="s1">(choice == </span><span class="s4">4</span><span class="s1">){</span>
+            <span class="s1">exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s3">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
