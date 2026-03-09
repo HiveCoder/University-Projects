@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Isabelo </title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/LOGO.png">
+    <link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Dela+Gothic+One">
+</head>
+<div class="topnav">
+    <a class="active" href="/html/index.html">Home</a>
+    <a href="/html/aw.html">Calorie Calculator</a>
+    <a href="/html/diet.html">Diet Page</a>
+    <a href="/html/about.html">About</a>
+    
+  </div>
+<body>
+    <script src="../js/script.js"></script>
+    <div id="bmiContainer" class="container">
+        <h1 id="dietIsabelo">Diet Isabelo&#8482;</h1>
+        <div id="bmi">
+            <div id="ageBox" class="textInput">
+                <label for="age"><h3>Age: </h3></label>
+                <input type="number" min="1" id="ageInput" placeholder="input age" required>
+                <span id=ageWarning class="input-description hiddenAF">* This field is required.</span><br>
+            </div>
+
+            <div id="gender" class="radiobox">  
+                <label for="weight"><h3>Sex: </h3></label> <br>
+                <input type="radio" id="male" name="genderUnit" value="male">
+                <label for="male"><h3>Male</h3></label>
+                <input type="radio" id="female" name="genderUnit" value="female">
+                <label for="female"><h3>Female</h3></label>
+                <span id=genderWarning class="input-description hiddenAF">* This field is required.</span>
+            </div>
+
+            <div class="textInput">
+                <label for="weight"><h3>Weight: </h3></label>
+                <input type="number" min="1" id="weight" placeholder="input weight" required>
+                <span id=weightWarning class="input-description hiddenAF">* This field is required.</span><br>
+                <input type="radio" id="kg" name="weightUnit" value="kg" checked>
+                <label for="kg">kg</label>
+                <input type="radio" id="lbs" name="weightUnit" value="lbs">
+                <label for="lbs">lbs</label>
+            </div>
+
+            
+            <div class="textInput">
+                <label for="height"><h3>Height: </h3></label>
+                <input type="number" min="1" id="height" placeholder="input height" required>
+                <span id=heightWarning class="input-description hiddenAF">* This field is required.</span><br>
+                <input type="radio" id="cm" name="heightUnit" value="cm" checked>
+                <label for="cm">cm</label>
+                <input type="radio" id="ft" name="heightUnit" value="ft">
+                <label for="ft">ft</label>
+            </div>
+
+        </div>
+        <button type="button" id="calculate-bmi-button">Calculate BMI</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+            </div>
+        
+          </div>
+    </div>
+
+    <div id="goalContainer" class="container hidden">
+        <h2>What is your goal?  &#128170; </h2>
+        <label id="loseWeightGoal" class="container-goal">Lose weight   &#129382;
+          </label>
+          
+          <label id="maintainWeightGoal" class="container-goal">Maintain weight   &#127831;
+          </label>
+          
+          <label id="gainWeightGoal" class="container-goal">Gain weight   &#128137;
+          </label>
+
+          <label id="goBack" class="container-goal go-back-button-pero-goal">Go Back </label>
+    </div>
+
+    <!-- <p id="bmi-result"></p> -->
+
+    <div id="infoContainer" class="container hidden">
+        <h2>User stats &#128104;</h2>
+
+        <p></p>
+        <!-- PLACEHOLDER VALUES -->
+            <h3 class="infoProf">BMI:</h3><h3 class="profileVal" id="bmiV">wala pa ngay</h3>
+            <h3 class="infoProf" data-tooltip="fatass.">GOAL:</h3><h3 class="profileVal" id="goalWeightV">wala pa ngay</h3>
+            <h3 class="infoProf" data-tooltip="your target weight that is bla bla bla">TARGET WEIGHT:</h3>
+            <input type="number" id="target-weight-input" class="profileVal" value="52" min="1"> kg<br>
+            <h3 class="infoProf" data-tooltip="Basal Metabolic Rate">BMR (Calories):</h3><h3 class="profileVal" id="bmrV"></h3>
+            <button type="button" id="confirm-info-button">CONFIRM</button>
+            <button type="button" id="go-back-button">GO BACK</button>
+    </div>
+
+
+    <!-- CLEAR BUTTON -->
+        <button id="clearStorBTN" class="">&#8635;</button>
+</body>
+</html>

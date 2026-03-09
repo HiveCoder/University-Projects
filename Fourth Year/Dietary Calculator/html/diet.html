@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dietary Foods</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/LOGO.png">
+  <link rel="stylesheet" href="../css/dietpage.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One">
+</head>
+<body>
+<div class="topnav">
+  <a href="/html/index.html">Home</a>
+  <a href="/html/aw.html">Calorie Calculator</a>
+  <a class="active"href="/html/diet.html">Diet Page</a>
+  <a href="/html/about.html">About</a>
+  
+</div>
+
+<div id="about-diet-page" class="content">
+  <br><br>
+  <h1>Dietary Food Recipes</h1>
+  <h3>This website will serve you well in terms of deciding what to eat and how to do it.<br>
+    We will let you know first the three important ingredients towards success</h3>
+  <div class="ul-container-about">
+    <ul>
+      <li><h4>Eat varied, colorful, nutritionally dense foods</h4></li>
+      <li><h4>Engage in regular physical activity and exercise</h4></li>
+      <li><h4>Stay hydrated by drinking plenty of water.</h4></li>
+    </ul>
+  </div>  
+</div>
+
+<h1>Recipe for Healthy Meals</h1>
+<div class="grid-content">
+  <div class="food-item" style="--clr:#567DF5" onclick="showRecipe('food1')">
+    <br>
+    <h2>Pea Soup</h2>
+    <img src="../assets/images/pea.jpg" alt="Food1">
+    <p>Click to view recipe</p>
+  </div>
+
+  <div class="food-item" style="--clr:#567DF5" onclick="showRecipe('food2')">
+    <br>
+    <h2>Egg in Bell Pepper</h2>
+    <img src="../assets/images/eggbell.jpg" alt="Food2">
+    <p>Click to view recipe</p>
+  </div>
+
+  <div class="food-item" style="--clr:#567DF5" onclick="showRecipe('food3')">
+    <br>
+    <h2>Poach Egg in Sandwich</h2>
+    <img src="../assets/images/poach.jpg" alt="Food3">
+    <p>Click to view recipe</p>
+  </div>
+  
+  <div class="food-item" style="--clr:#567DF5" onclick="showRecipe('food4')">
+    <br>
+    <h2>Pork Steak</h2>
+    <img src="../assets/images/keto1.jpg" alt="Food4">
+    <p>Click to view recipe</p>
+  </div>
+  
+  <div class="food-item" style="--clr:#567DF5" onclick="showRecipe('food5')">
+    <br>
+    <h2>Chicken Salad Tostadas</h2>
+    <img src="../assets/images/shrimp.jpg" alt="Food5">
+    <p>Click to view recipe</p>
+  </div>
+  
+  <div class="food-item" style="--clr:#567DF5" onclick="showRecipe('food6')">
+    <br>
+    <h2>Shrimp, Avocado, and Feta Wrap</h2>
+    <img src="../assets/images/tor.jpg" alt="Food6">
+    <p>Click to view recipe</p>
+  </div>
+</div>
+
+<script>
+  function showRecipe(foodId) {
+
+    var recipeContainer = document.getElementById('recipeContainer');
+    var recipeContent = document.getElementById(foodId);
+
+
+    var allRecipeContents = document.getElementsByClassName('recipe-content');
+    for (var i = 0; i < allRecipeContents.length; i++) {
+      allRecipeContents[i].style.display = 'none';
+    }
+
+    recipeContent.style.display = 'block';
+
+    recipeContainer.scrollIntoView();
+  }
+</script>
+
+
+<div id="recipeContainer" class="container">
+  <div id="food1" class="recipe-content">
+    <h2>Recipe for Pea Soup</h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>2 ¼ cups dried split peas</li>
+      <li>2 quarts cold water, plus more as needed</li>
+      <li>1 ½ pounds ham bone</li>
+      <li>2 onions, thinly sliced</li>
+      <li>½ teaspoon salt</li>
+      <li>¼ teaspoon ground black pepper</li>
+      <li>1 pinch dried marjoram</li>
+      <li>3 stalks celery, chopped</li>
+      <li>3 carrots, chopped</li>
+      <li>1 potato, diced</li>
+
+
+    </ul>
+    <h3>Instructions:</h3>
+    <ol>
+      <br>
+      <li>Place peas in a large stockpot and cover with several inches of cold water; let soak, 8 hours to overnight. Drain, rinse, and return peas to the pot.</li>
+    <br>
+      <li>Add 2 quarts of cold water, ham bone, onion, salt, pepper, and marjoram to the stockpot. Cover, bring to a boil, and simmer for 1 1/2 hours, stirring occasionally.</li>
+      <br>
+      <li> Remove ham bone; cut off meat, dice, and return meat to soup. Add celery, carrots, and potatoes. Cook slowly, uncovered, until vegetables are tender, about 30 to 40 minutes.</li>
+    </ol>
+  </div>
+  <div id="food2" class="recipe-content">
+    <h2>Recipe for 3-Ingredient Bell Pepper & Cheese Egg Cups</h2>
+    <br>
+    <h2> Nutrition Notes </h2>
+    <br>
+    <h4>Are Eggs Good for You?</h4>
+    <br>
+    While eggs were getting a bad rap due to their cholesterol content, we know now that dietary cholesterol has a minimal impact on the cholesterol levels in our body. Eggs are a great source of protein, vitamin B12, choline and antioxidants. The nutrients in eggs contribute to your health in many ways, from healthier skin and hair to better vision and stronger bones.
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>4 medium bell peppers, any color</li>
+      <li>¼ teaspoon salt, divided</li>
+      <li>¼ teaspoon ground pepper, divided</li>
+      <li>8 large eggs</li>
+      <li>¼ cup Mexican-blend shredded cheese</li>
+      <li>Chopped fresh cilantro for garnish <h5>(optional)</h5></li>
+
+    </ul>
+    <h3>Instructions:</h3>
+    <ol>
+      <li>Preheat oven to 400°F. Coat a large rimmed baking sheet with cooking spray.</li>
+      <li>Cut bell peppers in half through the stem end. Remove ribs and seeds. Place the peppers in the pan cut-side up and sprinkle with 1/8 teaspoon each salt and pepper.</li>
+      <li>Bake the peppers for 15 minutes. Remove the baking sheet from the oven and crack 1 egg into each pepper cup. Season with the remaining 1/4 teaspoon each salt and pepper, then top each with 1/2 tablespoon cheese.</li>
+      <li>Bake until the egg whites are set, 15 to 20 minutes. Sprinkle with cilantro, if desired.</li>
+    </ol>
+  </div>
+
+  <div id="food3" class="recipe-content">
+    <h2>Recipe for Poach Egg Sandwich</h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>4 large cold eggs</li>
+      <li>1 pinch salt and freshly ground black pepper</li>
+
+    </ul>
+    <h3>Instructions:</h3>
+    <ol>
+      <br>
+      <li>Fill a large pot with water and place a sous vide immersion cooker into the water. Set temperature to 167 degrees F (75 degrees C) according to manufacturer's instructions; allow 15 minutes for the water to heat.</li>
+      <br>
+      <li>Gently lower eggs into the water using a slotted spoon. Immediately set a kitchen timer for 13 minutes.
+      </li>
+      <br>
+      <li> Remove eggs from water once timer is up and let cool for 3 minutes. Gently crack egg around the middle and peel top half of shell. Slide egg out into a small bowl or serve over toast. Season with salt and pepper.</li>
+    </ol>
+  </div>
+
+  <div id="food4" class="recipe-content">
+    <h2>Recipe for Pork Steak </h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>4 boneless, center-cut pork chops, 1-inch thick</li>
+      <li>cooking spray</li>
+      <li>2 teaspoons dry ranch salad dressing mix (such as Hidden Valley Ranch)</li>
+
+
+    </ul>
+    <h3>Instructions:</h3>
+    <ol>
+      <br>
+      <li>Gather all ingredients.</li>
+      <br>
+      <li>Place pork chops onto a plate and lightly spray both sides with cooking spray.
+      </li>
+      <br>
+      <li> Sprinkle both sides with ranch seasoning mix and let sit at room temperature for 10 minutes.</li>
+      <br>
+      <li>Spray an air fryer basket with cooking spray and preheat the air fryer to 390 degrees F (200 degrees C).</li>
+      <br>
+      <li>Working in batches if necessary to ensure they are not overcrowded, place chops into the preheated air fryer. Cook for 10 minutes, flipping halfway through. An instant-read thermometer inserted into the center should read at least 145 degrees F (63 degrees C).</li>
+      <br>
+      <li>Transfer to a foil-covered plate and let sit for 5 minutes before serving.</li>
+      <br>
+    </ol>
+  </div>
+  <div id="food5" class="recipe-content">
+    <h2>Recipe for Shrimp, Avocado, and Feta Wrap</h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>1 (10 ounce) Southwest-style salad kit</li>
+      <li>6 ounces rotisserie chicken breast, shredded</li>
+      <li>6 tostada shells</li>
+
+    </ul>
+    <h3>Instructions:</h3>
+    <ol>
+      <br>
+      <li>Prepare salad kit according to package directions, reserving tortilla strips and shredded cheese; fold in chicken. Divide the chicken salad mixture among tostada shells. Top with the reserved tortilla strips and cheese.</li>
+    </ol>
+  </div>
+
+  <div id="food6" class="recipe-content">
+    <h2>Chicken Salad Tostadas</h2>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li>3 ounces chopped cooked shrimp</li>
+      <li>¼ cup diced avocado</li>
+      <li>¼ cup diced tomato</li>
+      <li>1 scallion, sliced</li>
+      <li>2 tablespoons crumbled feta cheese</li>
+      <li>1 tablespoon lime juice</li>
+      <li>1 whole-wheat tortilla</li>
+
+
+    </ul>
+    <h3>Instructions:</h3>
+    <ol>
+      <br>
+      <li>Combine shrimp, avocado, tomato, scallion, feta and lime juice in a small bowl. Serve in tortilla.</li>
+    </ol>
+  </div>
+</div>
+
+<div id="back-to-top">
+  <button onclick="scrollToTop()" id="back-to-top-button">
+      <img src="../assets/images/uparrow.png" alt="Back to Top">
+  </button>
+</div>
+<script src="../js/backToTop.js"></script>
+
+</body>
+</html>

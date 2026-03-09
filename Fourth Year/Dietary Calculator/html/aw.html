@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Isabelo</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/LOGO.png">
+    <link rel="stylesheet" href="../css/stylePage2.css" >
+    <title>bustin</title>
+</head>
+<!-- NAVBAR -->
+    <div class="topnav">
+        <a href="/html/index.html">Home</a>
+        <a class="active">Calorie Calculator</a>
+        <a href="/html/diet.html">Diet Page</a>
+        <a href="/html/about.html">About</a>
+    </div>
+
+<!-- BODEHH -->
+    <body>
+    <script type="module" src="../js/dietScript.js"></script>
+    <!-- TOP CONTAINER -->
+    <div id="dietDiv" class="container sticky">
+        <h2 id="txtCalorieStat"></h2>
+        <h4 id="percentCalorieStat">100%</h4>
+        <div id="bmrTotalBar">
+            <div id="bmrProgressBar"></div>
+          </div>
+    </div>
+    <!-- END OF TOP CONTAINER -->
+    <div id="foodsContainer" class="container">
+        <!-- RESTAURANT DROP DOWN -->
+        <div class="dropdown">
+            <button id="dropDownButton" class="dropbtn">choose fastfood <i id="arrowDpd" class="arrow down"></i></button>
+            <div id="myDropdown" class="dropdown-content">
+            </div>
+          </div>
+        <!-- END OF RESTAURANT DROP DOWN -->
+
+            <!-- icon -->
+            <img id="restoLogo" src="../assets/images/LOGO.png">
+            <!-- end icon -->
+
+            <div id="showMeAtStart" class="">
+                <h1 id="startMessage">hello</h1>
+            </div>
+
+        <!-- ORDERS LABEL -->
+        <h2 id="menuLabel"></h2>
+        <!-- END OF ORDERS LABEL -->
+
+        <!-- SEARCH FOOD... -->
+          <input type="text" id="myInput" placeholder="Search in menu.." class="hiddenAF">
+        <!-- END OF SEARCH FOOD -->
+
+        <!-- NOTHING FOUND LABEL -->
+        <h3 id="notFoundLabel" class="hiddenAF"></h3>
+        <!-- END OF FOUND LABEL -->
+
+        <!-- FOOD FROM RESTAURANTS TABLE -->
+            <table id="restoFoods" class="tableKo">
+                <tr id="restoFoodsHeader" class="headerTable hiddenAF">
+                    <th style="width:60%;">FOOD</th>
+                    <th style="width:40%;">CALORIES</th>
+                </tr>
+            </table>
+        <!-- END OF FOOD FROM RESTAURANTS TABLE -->
+
+        <!-- ORDERS LABEL -->
+            <h2 id="ordersLabel" class="hiddenAF">ORDERS:</h2>
+        <!-- END OF ORDERS LABEL -->
+
+        <!-- FOODS TO ORDER TABLE -->
+            <table id="whatToOrder" class="tableKo">
+                <tr id="whatToOrderHeader" class="headerTable hiddenAF">
+                    <th style="width:60%;">FOOD</th>
+                    <th style="width:40%;">CALORIES</th>
+                </tr>
+            </table>
+        <!-- END OF FOOD TO ORDER TABLE -->
+
+        <div class="button-container">
+            <!-- CLEAR ORDERS BUTTON -->
+                <button id="clearOrdersBTN" class="hiddenAF">Clear choices</button>
+            <!-- END OF CLEAR BUTTON -->
+
+            <!-- PRINT CHOICES BUTTON -->
+                <button id="printChoicesBTN" class="hiddenAF ">Confirm choices</button>
+            <!-- END OF PRINT BUTTON -->
+        </div>
+    </div>
+
+    <!-- MODAL BOX CONFIRM CHOICES -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>ORDER:</h1>
+          
+        </div>
+      </div>
+    <!-- MODAL BOX END -->
+
+    <div id="notif">you have exceeded your maximum calorie goal.. fatass</div>
+    </body>
+</html>

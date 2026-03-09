@@ -1,0 +1,110 @@
+@import url('styles.css');
+
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1E1E1E;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.standings {
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+table {
+    font-family: F1FONTREGULAR;
+    width: 90%;
+    margin-left: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+table tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+table th, table td {
+    padding: 20px 15px;
+    color: black;
+    text-align: left ;
+}
+
+table th {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+tbody tr {
+    background-color: #CCCCCC;
+}
+
+tbody tr:nth-of-type(odd) { 
+    background-color: #929292;
+}
+
+td.driverName, td.teamName {
+    display: flex;      
+    align-items: center;  
+}
+
+td.driverName img, td.teamName img {
+    margin-right: 6px;
+}
+
+.leader {
+    background-color: #dcdcdc;
+}
+
+.drivers img, .constructors img {
+    height: 30px; 
+    width: auto; 
+    display: inline;
+}
+
+.driverImgContainer, .teamImgContainer {
+    width: 40px;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+}
+
+th span{
+    cursor: pointer;
+    user-select: none;
+}
+
+.drivers img {
+    width: 40px;
+    height: 30px;
+}
+
+.teamImgContainer .logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    display: inline;
+}
+
+tr {
+    vertical-align: middle;
+}

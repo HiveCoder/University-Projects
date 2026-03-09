@@ -1,0 +1,61 @@
+@import url('style.css');
+
+.ul-container-about {
+    text-align: center;    
+}
+
+.ul-container-about ul {
+    display: inline-block;
+    text-align: left;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-content img {
+    position: center;
+}
+
+.food-item {
+    text-align: center;
+}
+
+.food-item img {
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.food-item img:hover{
+    background-color: var(--clr);
+    box-shadow: 0 0 100px var(--clr);
+}
+
+.content {
+    text-align: center;
+    overflow: hidden;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#back-to-top-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: #567DF5;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#back-to-top-button img {
+    width: 24px;
+    height: 24px;
+}

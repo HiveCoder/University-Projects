@@ -1,0 +1,496 @@
+/* https://colorswall.com/palette/18475 */
+#infoContainer img {
+  width: 382px;
+  height: 244px;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #4f3f3c;
+    margin: 0;
+    padding: 0;
+    background-color: #f5ce56;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+/* i think i will remove this (da topnav) */
+.topnav {
+    background-color: #4f3f3c;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #bcddd4;
+    color: black;
+  }
+html {
+    scroll-behavior: smooth;
+  }
+
+h1 {
+    text-align: center;
+}
+/* logo */
+#dietIsabelo{
+    text-align: center;
+    font-family: Dela Gothic One;
+    font-size: 56px;
+    text-shadow: 3px 3px 3px #ababab;
+    color: #4f3f3c;
+}
+h2{
+    text-align: center;
+}
+h3{
+    margin-bottom: 2px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.infoProf {
+    display: inline-block;
+    width: 40%; /* Adjust the width as needed */
+    margin-right: 5px; /* Reduced margin for spacing */
+    text-align: right; /* Align the text to the right */
+    font-weight: bold; /* Remove bold style */
+    position: relative;
+}
+
+.profileVal {
+    display: inline-block;
+    width: 50%; /* Adjust the width for values */
+    margin-left: 5px; /* Reduced margin for spacing */
+    font-weight: normal; /* Apply bold style to values */
+}
+
+
+/* WILL ONLY APPLY KUNG MAY DATA-TOOLTIP SA ELEMENT[]*/
+[data-tooltip]::before {
+    content: attr(data-tooltip); /* ayo parameters in css */
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: normal;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    min-width: max-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    pointer-events: none;
+    text-align: left;
+    margin: auto;
+}
+
+/* when hovered */
+[data-tooltip]:hover::before {
+    opacity: 0.8;
+}
+
+
+
+label {
+    display: inline-block;
+    margin-bottom: 0rem;
+    margin: 0px;
+}
+
+button{
+    transition: 0.3s;
+}
+
+input[type="number"]{
+    padding: 0.5rem;
+    margin: auto;
+    border: 0px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+}
+input:focus, input:focus {
+  outline: none;
+}
+
+#bmiContainer input[type="number"] {
+    display: block;
+    width: 100%; 
+}
+
+#target-weight-input[type="number"] {
+    display: inline-block;
+    width: 10%; 
+}
+
+/* cm ft, kg lbs */
+div.textInput input[type="radio"] {
+    display: inline-block;
+    margin-left: 6pxpx;
+    margin-top: 6px;
+}
+
+#bmiContainer input::-webkit-outer-spin-button,#bmiContainer  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;    
+    margin: 0;
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 50%;
+    border: 0px;
+    border-color: #04AA6D;
+    color: #52b265;
+    background-color: #dcfff2;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+    
+}
+
+button:hover{
+    background-color: #52b265;
+    color: white;
+
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.container {
+    display: block;
+    height: fit-content;
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 2rem;
+    border: 0px solid #000000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 25px;
+}
+
+#bmiContainer{
+    margin-top: 75px;
+}
+
+#goalContainer{
+    margin-bottom: 50px;
+    height: fit-content;
+}
+
+#go-back-button {
+  background-color: #ff8383;
+  color: 	#ff0f0f;
+}
+
+#go-back-button:hover {
+  background-color: #ff0f0f;
+  color: white;
+}
+
+
+.go-back-button-pero-goal {
+  max-width: 30% !important;
+  text-align: center;
+  background-color: #ff8383 !important; 
+  color: 	#ff0f0f !important;
+}
+
+.go-back-button-pero-goal:hover {
+  background-color: #ff0f0f !important;
+  color: white !important;
+}
+
+/* YUNG BUTTON SA GOALS, BUT THIS IS NOT A BUTTON!! */
+.container-goal {
+    display: block;
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 22px;
+    background-color: #d6fff1;
+
+    /* hindi ko alam kung para saan ito mga to kinuiha ko lang sa w3schoolz */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container-goal input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .container-goal:hover{
+    background-color: #04AA6D;
+  }
+
+  .container-goal.active{
+    background-color: #04AA6D;
+  }
+
+div#bmi{
+    /* width: 80%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    /* flex-flow: column; */
+}
+
+div#bmi>div {
+    flex-grow: 1;
+    padding: 5px;
+    width: 40%;
+}
+
+div#bmi>div#gender {
+    /* text-align: center; */
+    height: fit-content;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1.1s, opacity 1.1s linear;
+    pointer-events: none;
+  }
+
+  .visible{
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    pointer-events: auto;
+  }
+
+  /* TRANSITION NOT WORKING!!! */
+  .hiddenAF{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    visibility: hidden;
+    display: none;
+  }
+  
+  #weightWarning{
+    margin-left: 9px;
+  }
+
+  .input-description {
+    font-size: 12px;
+    font-style: italic;
+    color: #ff0000;
+    margin-top: 1px;
+    padding-left: 1px;
+    float: top;
+}
+
+.container img{
+  width: 200px;
+  height: 200px;
+}
+
+.nuhUh {
+  pointer-events: none;
+}
+
+.faded {
+  opacity: 0.7;
+}
+
+/*Member page*/
+.aboutContainer {
+  max-width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 2rem;
+  border: 0px solid #000000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#bmiImg {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+#darrenhehe img{
+  min-width: 200px;
+  min-width: 200px;
+}
+
+.aboutContainer img {
+  max-width: 200px;
+  max-height: 200px;
+  border: 3px solid #000;
+}
+
+.aboutContainer h2 {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.member {
+  text-align: center;
+}
+
+.member h4 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.memberCard {
+  position: center;
+  width: 27%; 
+  margin: 1%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: top; 
+}
+
+.memberCard img {
+  max-width: 100%;
+  height: 500%;
+  border-radius: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .memberCard {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .memberCard {
+    width: 100%;
+  }
+}
+ .food-item img {
+      width: 400px; /* Adjust the width as needed */
+      height: 400px; /* Maintain aspect ratio */
+      border: 5px solid black; /* Optional border for images */
+    }
+
+#clearStorBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: #ff9191;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: black;
+  position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 100%;
+}
+
+#clearStorBTN:hover {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}

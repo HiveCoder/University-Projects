@@ -1,0 +1,81 @@
+@import url('styles.css');
+
+
+html{
+  background-image: url(../assets/teams4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+table {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    margin-bottom: 120px;
+    opacity: 0.95;
+  }
+  
+  table, th, td {
+    border: none;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  .tableTeams td {
+    font-family: F1FONTREGULAR;
+  }
+  
+  th {
+    background-color: black;
+  }
+  
+  tr:nth-of-type(odd) {
+    background: #333333;
+  }
+
+  tr:nth-of-type(even) { 
+    background: #201c1c;
+    }
+  
+  .tableTeams tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+  }
+  
+  .tableTeams tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+  }
+  
+  .tableTeams tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+  }
+  
+  .tableTeams tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .headerTeams{
+    padding: 30px;
+    color: white;
+  }
+  
+#mainTitle{
+  display: inline;
+}
+
+.headerTeams{
+  padding: 50px;
+  padding-bottom: 20px;
+}
