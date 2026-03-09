@@ -1,0 +1,597 @@
+
+@font-face {
+    font-family: Sasoon;
+    src:url(font/SassoonInfantStd.otf);
+}
+
+@font-face {
+    font-family: Frutiger;
+    src:url(font/Frutiger.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Frutiger ;
+}
+
+
+body {
+  background: linear-gradient(to right, white 0%, #D3D3D3 50%, white 100%);
+  background-size: 200% 100%;
+  animation: gradientAnimation 4s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 100% 0%;
+  }
+  100% {
+      background-position: -100% 0%;
+  }
+}
+
+
+.accent-color {
+  color: #333;
+}
+.banner {
+    width: 100%;
+    height: 100vh;
+    /*
+        background-image: url(img/health.jpeg);
+     */
+
+    background-color:  #E6E7E9 ;
+    background-size: cover;
+    color: black;
+    background-position: center;
+
+}
+
+/* Styling for the navigation bar */
+nav {
+    background: linear-gradient(to bottom, #333, #009688);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+}
+
+/* logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.logo label {
+    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    max-width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+/* Hamburger */
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 2;
+}
+
+.menu-icon img {
+    max-width: 30px;
+    height: 30px;
+}
+
+
+.menu-toggle {
+    display: none;
+}
+
+/* List styles */
+nav ul.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #D3D3D3;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.1px;
+}
+
+nav a:hover {
+    color: #009688;
+    background-color: #222; /* Background color when hovered */
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+.text {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 5%;
+    float: left;
+}
+
+.diseases {
+    background-color: #fffcfc;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    transition: transform .2s;
+}
+
+.diseases ul{
+    padding-left: 10px;
+}
+
+.diseases:hover {
+    transform: scale(1.3);
+}
+
+
+
+
+.images {
+    background-color: #fffcfc;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    transition: transform .2s;
+}
+.images h3 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.images:hover {
+    transform: scale(1.3);
+}
+
+.images img{
+    width: 340px;
+    height: 340px;
+    margin: 20px;
+    object-fit: cover;
+}
+
+
+
+.about{
+    background-color: #fffcfc;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    transition: transform .2s;
+}
+.about:hover {
+    transform: scale(1.3);
+}
+
+
+.d-container {
+    display: flex;
+    justify-content: center;
+}
+
+.i-container {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+.between {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+/*
+These are for the index.html
+ */
+.impact {
+    display: flex;
+    height: 700px;
+    padding-top: 50px;
+    padding-left: 200px;
+    flex-direction: column;
+    justify-content: center;
+    /*
+        border: 1px solid green;
+     */
+    font-size: 30px;
+    background-image: url(img/health.jpeg);
+    background-size: cover;
+
+}
+
+.spacers {
+    width: 100%;
+    height: 300px;
+    background-color: #E6E7E9 ;
+}
+
+.line{
+    margin: auto;
+    width: 100%;
+
+    padding: 10px;
+    text-align: center;
+    background-color:  #E6E7E9 ;
+}
+
+
+.index-article{
+    display: flex;
+    height: 600px;
+    padding-top: 60px;
+    padding-left: 200px;
+    flex-direction: column;
+    justify-content: center;
+    /*
+        border: 1px solid green;
+     */
+    font-size: 30px;
+}
+
+.article-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    justify-content: center;
+}
+
+.article {
+    flex: 0 0 auto;
+    border: 1px solid black;
+    width: 400px;
+    margin-right: 20px;
+    color: #000;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 0; 
+    margin-bottom: 20px;
+    padding: 20px;
+    
+}
+
+.article:hover {
+    transform: scale(1.1);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.article img {
+    width: 100%;
+    height: 350px;
+}
+
+.article .text {
+    margin: 10px 0;
+    color: #000;
+}
+
+
+/* Contact Section */
+.contacts-container {
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contacts-container h2 {
+    font-size: 32px;
+    color: #009688;
+    margin-bottom: 20px;
+}
+
+.contacts-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-item {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contact-item h3 {
+    font-size: 20px;
+    color: #009688; /* Accent color */
+    margin-bottom: 10px;
+}
+
+.contact-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin: 5px 0;
+}
+
+.contact-details a {
+    color: #009688; /* Accent color */
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.references{
+    background-color: #f8f8f8;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+
+.references h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+
+
+.references ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+
+.references li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+.references a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+.references a:hover {
+    text-decoration: underline;
+}
+.references a:visited {
+    color: #990099; /* You can choose any color you prefer for visited links */
+}
+
+@media screen and (max-width: 1024px) {
+    .diseases {
+        text-align: justify;
+    }
+    .diseases:hover {
+        transform: scale(1);
+    }
+
+    * {
+        font-family: Sasoon;
+    }
+
+    .d-container{
+        flex-direction: column;
+
+
+    }
+
+    .diseases {
+        width: auto;
+    }
+
+    .diseases ul{
+        padding-left: 20px;
+    }
+
+    .article {
+        width: 90%;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .article-container {
+        flex-direction: column;
+    }
+
+    /*
+  This is for all the bodies/banners
+   */
+    .banner > div:not(.navbar) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*
+         border: 1px solid green;
+         */
+        flex-direction: column;
+        background-color:   #E3D26F ;
+    }
+
+    .spacers{
+        background-color: #E3D26F ;
+    }
+
+    body {
+        background: none;
+        animation: none;
+        background-color: #E3D26F;
+    }
+
+    /*
+
+    These are for the index.html
+     */
+    .impact {
+        height: 700px;
+        padding-top: 200px;
+        padding-left: 0px;
+        font-size: 20px;
+        text-align: center;
+        background-image: none;
+        background-color: #E3D26F ;
+        /*
+         #E3D26F
+        #6f80e3
+         */
+
+    }
+
+    .i-container div{
+        background-color:  #F0E798 ;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .d-container div{
+        background-color:  #F0E798 ;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    /* Show the hamburger icon and hide the links */
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Hide list items when the menu is collapsed */
+    .menu-toggle:not(:checked) ~ .nav-list {
+        display: none;
+    }
+
+    .menu-toggle:checked ~ .menu-icon img {
+        display: block; /* Show the hamburbur when the menu is collapsed */
+    }
+
+    /*dropdown box design */
+    .menu-toggle:checked ~ .nav-list {
+        display: flex;
+        flex-direction: column;
+        background-color: #009688;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+        border: 2px solid #00645a; /* border color*/
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        z-index: 1;
+    }
+
+
+    .line{
+
+        background-color: #E3D26F ;
+    }
+
+
+    .article-container {
+        flex-wrap: wrap;
+    }
+
+    .article {
+        flex: 0 0 calc(33.33% - 20px);
+        margin-right: 20px;
+        margin-bottom: 20px;
+        align-self: center;
+        align-content: center;
+    }
+
+    .article img {
+        width: 98%;
+
+    }
+
+    .diseases:hover {
+        transform: none;
+    }
+
+    .images:hover {
+        transform: none;
+    }
+
+    .about:hover {
+        transform: none;
+    }
+    .article:hover {
+        transform: none;
+    }
+    .references {
+        background-color:  #F0E798 ;
+    }
+
+    .references h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .references li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+
+}
+/*
+ Adobe Devanagari
+ E3D26F
+ 4E3822
+  */
