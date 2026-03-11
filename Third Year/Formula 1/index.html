@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <title>F1TW</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/titleIcon.png">
+</head>
+<body>
+    <script type="module" src="./js/index.js"></script>
+    <!-- <script type="module" src="./js/testerApi.js"></script> -->
+    <header>
+        <!-- NAVBAR -->
+        <div class="navbar sticky">
+            <img src="assets/logotry.png" alt="F1 Info Portal Logo" class="logo">
+            <div class="centered-links">
+                <a class="active" href="#home">Home</a>
+                <div class="dropdown">
+                    <button id="dropDownBtn">Season Overview
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="html/standings.html">Standings</a>
+                        <a href="html/drivers.html">Drivers</a>
+                        <a href="html/teams.html">Teams</a>
+                        <a href="html/circuits.html">Circuits</a>
+                    </div>
+                </div>
+                <a href="https://www.formula1.com/en/latest/all.html" target='_blank'>News</a>
+                <a href="https://www.timetoast.com/timelines/formula-i-history" target='_blank'>History</a>
+            </div>
+        </div>
+    </header>
+        <!-- END NAVBAR -->
+
+        <!-- VID BG -->
+            <video autoplay loop muted plays-inline class="BGVID">
+                <source src="assets\bgvid2.mp4" type="video/mp4">
+            </video>
+        <!-- END BG VID -->
+
+        <!-- SUM CONTENT -->
+            <div class="real">
+                <h1 id="welcomeMsg">Welcome to Formula One</h1>
+                <a href=#realshit id="explore">Explore</a>
+            </div>
+
+            <div class="container" id="realshit">
+                <div class="top-row">
+                    <div class="logo-section">
+                        <img src="assets/f1logo.png" id="contentLogo">
+                    </div>
+                    <div class="race-details">
+                        <h4 id="upcomingTag">Coming up</h4>
+                        <hr class="separatorForDaMain">
+                        <a target='_blank' href="" class="noDecorationA" id="mainTitleLink"><h1 class="mainTitle" id="nextEvent">Cavite Grand Prix</h1></a>
+                        <h2 class="dateNextGP" id="dateGP">Oct 27 - 29</h2>
+                    </div>
+                    <div class="timer-section">
+                        <div class="square">
+                            <h2>Countdown</h2>
+                            <hr class="separator">
+                            <div class="time">
+                                <div class="time-block">
+                                    <span class="number days"></span>
+                                    <span class="label">days</span>
+                                </div>
+                                <div class="time-block">
+                                    <span class="number hours"></span>
+                                    <span class="label">hours</span>
+                                </div>
+                                <div class="time-block">
+                                    <span class="number minutes"></span>
+                                    <span class="label">minutes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="news-section">
+                    <h2>Latest News</h2>
+                    <div class="news-articles-wrapper">
+                        <div class="news-article">
+                            <img src="assets/tamnail2.png" alt="News Thumbnail 1" class="news-thumbnail">
+                            <div class="news-content">
+                                <h3 id="newsTitle1"></h3>
+                                <p class="newsDesc" id="newsDesc1"></p>
+                                <a href="#" id="news1" target='_blank'>Read more</a>
+                            </div>
+                        </div>
+
+                        <!-- hardcode lang ito kasi yung news api na gamit natin dalawang article lang nirereturn lamao -->
+                        <!-- itago niyo to kay maam -->
+                        <div class="news-article">
+                            <img src="assets/tamnail.jpg" alt="News Thumbnail 2" class="news-thumbnail">
+                            <div class="news-content">
+                                <h3>Verstappen Crowned as Champion</h3>
+                                <p class="newsDesc">Source: CNN</p>
+                                <a target='_blank' href="https://edition.cnn.com/2023/10/07/sport/max-verstappen-wins-formula-one-world-title-spt-intl/index.html">Read more</a>
+                            </div>
+                        </div>
+                        <!--  -->
+                        
+                        <div class="news-article">
+                            <img src="assets/tamnail3.jpg" alt="News Thumbnail 3" class="news-thumbnail">
+                            <div class="news-content">
+                                <h3 id="newsTitle2"></h3>
+                                <p class="newsDesc" id="newsDesc2"></p>
+                                <a href="#" id="news2" target='_blank'>Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="bottom-row">
+                <div class="calendar-section">
+                    <h2>Race Schedule</h2>
+                    <table class="tableSchedule">
+                        <thead>
+                            <tr>
+                                <th>Round</th>
+                                <th>Date</th>
+                                <th>Grand Prix</th>
+                                <th>Venue</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+            
+
+        <!-- footer -->
+        <footer>
+            <p>&copy; 2023 team5 subway - powered by ergast api</p>
+        </footer>
+        <!-- end footer -->
+</body>
+</html>
