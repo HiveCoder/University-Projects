@@ -1,0 +1,201 @@
+/* 
+    
+THIS IS THE MAIN CSS FILE
+
+    TEAM COLOR GUIDE: https://www.reddit.com/r/formula1/comments/lfpyfp/f1_2021_team_colors_hex_codes/
+    PALETTE (will fix): https://coolors.co/1e1e1e-dc0000-ffffff-cccccc-ffa500-333333
+    FONT (F1): https://blogfonts.com/formula1-display-bold.font
+    
+*/
+
+@font-face {
+    font-family: 'F1FONTWIDE';
+    src: url('../assets/fonts/Formula1-Wide_web_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'F1FONTREGULAR';
+    src: url('../assets/fonts/Formula1-Regular_web_0.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'F1FONTBOLD';
+    src: url('../assets/fonts/Formula1-Bold_web_0.ttf') format('truetype');
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    font-family: 'F1FONTBOLD';
+    background-color: #1E1E1E;
+    scroll-behavior: smooth;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+    float: left;
+    margin: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+    
+.navbar {
+    color: #f2f2f2;
+    z-index: 999;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a, .navbar button{
+    text-decoration: none;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    font-size: 11px;
+}
+
+.navbar a.active {
+    color: white;
+}
+
+.dropdown-content a.active {
+    color: rgb(255, 255, 255);
+    background-color: #9b9b9b;
+}
+
+.navbar a:hover, .dropdown:hover #dropDownBtn{
+    background-color: #ddd;
+    opacity: 1;
+    color: black;
+}
+
+.centered-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown{
+    
+    float: left;
+overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown #dropDownBtn {
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+
+    /* MIGHT REMOVE!!! */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: F1FONTREGULAR;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 99;
+}
+
+footer p {
+    margin: 0;
+}
+
+#hideMeAf{
+    padding: 0;
+}
+
+.noDecorationA{
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, font-size 0.5s ease;
+    font-family: F1FONTBOLD;
+}
+.noDecorationA:hover{
+    text-decoration: none;
+    color: #FFA500;
+    font-size: large;
+    font-family: F1FONTBOLD;
+}
+
+select{
+    font-family: F1FONTBOLD;
+    opacity: 0.9;
+    appearance: none;
+    outline: 10px red;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    background-color: #1E1E1E;
+    background-image: none;
+    cursor: pointer;
+}
+
+.selecta {
+    position: relative;
+    display: flex;
+    float: right;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    color: #CCCCCC;
+  }
+
+select::-ms-expand {
+    display: none;
+  }
+.selecta::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #1E1E1E;
+    transition: .3s all ease;
+    pointer-events: none;
+  }
+  .selecta:hover::after {
+    color: #FFA500;
+  }
