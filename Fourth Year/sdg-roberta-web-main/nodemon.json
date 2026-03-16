@@ -1,0 +1,11 @@
+{
+  "watch": ["index.js", "routes", "views"],
+  "ignore": [
+    "node_modules",
+    "uploads",
+    "venv",
+    "../venv",
+    "**/*.pdf"
+  ],
+  "ext": "js,json,ejs"
+}

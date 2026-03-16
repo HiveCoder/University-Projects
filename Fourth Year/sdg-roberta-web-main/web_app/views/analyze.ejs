@@ -1,0 +1,206 @@
+<!-- https://www.un.org/nl/exhibits/page/test -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG Report Analysis</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <%- include('partials/header.ejs') %>
+
+    <main class="page contact-us-page">
+      <section class="clean-block dark">
+        <div class="container">
+          <div class="block-heading">
+            <h2 class="text-info">SDG Report Assessment</h2>
+            <p>Upload your pdf document to start analysis</p>
+          </div>
+
+          <% if (error) { %>
+            <div class="alert alert-danger" role="alert"><%= error %></div>
+          <% } %>
+
+          <!-- FORM -->
+          <div id="uploadForm" <% if (predictions && predictions.length > 0) { %> style="display: none;" <% } %>>
+            <form action="/analyze" method="POST" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="reportFile" class="form-label">Upload Report File</label>
+                <input type="file" class="form-control" id="reportFile" name="reportFile" accept=".txt,.pdf,.doc,.docx">
+              </div>
+              <button type="submit" class="btn btn-primary">Analyze</button>
+            </form>
+          </div>
+
+          <!-- UPLOAD ANOTHER FILE BUTTON -->
+          <% if (predictions && predictions.length > 0) { %>
+            <button onclick="resetForm()" class="btn btn-primary mt-3">Upload Another File</button>
+          <% } %>
+
+
+          <!-- FOR PREDICTIONS -->
+          <% if (predictions && predictions.length > 0) { %>
+            <div class="row justify-content-center mt-5">
+              <div class="px-5 progress-div">
+                <h3>SDG Alignment Results:</h3>
+
+                <% predictions.forEach(function(prediction) { %>
+                  <div class="mb-3">
+                    <div class="progress-title" data-sdg-id="<%= prediction.sdg %>">
+                      SDG <%= prediction.sdg %>: Loading...
+                    </div>
+                    <div class="d-flex align-items-center" style="height: 1.75rem;">
+                      <div class="progress flex-grow-1 position-relative" style="height: 1.75rem;">
+                        <div class="progress-bar bg-success d-flex align-items-center" role="progressbar"
+                          style="width: <%= prediction.percentage %>%;">
+                          <span class="position-absolute start-0 ps-3 text-black" style="font-size: 1.2rem; font-weight: bold;">
+                            <%= prediction.percentage.toFixed(2) %>%
+                          </span>                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-3">
+                      <p class="mt-1 text-muted small">Aligned words: 
+                        <strong><%= prediction.aligned_words.join(", ") %></strong>
+                      </p>                     
+                    </div>
+                  </div>
+                <% }); %>
+                <% if (typeof uploadedFile !== 'undefined' && uploadedFile) { %>
+                  <div class="mt-4">
+                    <h3>Annotated PDF:</h3>
+                    <p class="text-muted">The PDF has been annotated with highlighted words that align with different SDGs.</p>
+                
+                
+                    <div class="embed-responsive mt-3" style="height: 800px;">
+                      <iframe src="/view-pdf/<%= uploadedFile %>" width="100%" height="100%" class="embed-responsive-item"></iframe>
+                    </div>
+                
+                    <div class="mt-2">
+                      <a href="/view-pdf/<%= uploadedFile %>" target="_blank" class="btn btn-outline-primary">
+                        Open PDF in new tab
+                      </a>
+                      <a href="/download-pdf/<%= uploadedFile %>" class="btn btn-outline-secondary ms-2">
+                        Download annotated PDF
+                      </a>
+                    </div>
+                  </div>
+                <% } else { %>
+                  <p>No file uploaded yet.</p>
+                <% } %>
+              </div>
+            </div>
+          <% } %>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h5>Get started</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Sign up</a></li>
+              <li><a href="#">Downloads</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>About us</h5>
+            <ul>
+              <li><a href="#">Company Information</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Support</h5>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help desk</a></li>
+              <li><a href="#">Forums</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-3">
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2024</p>
+      </div>
+    </footer>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("/sdgs.json")
+          .then(response => response.json())
+          .then(sdgs => {
+            document.querySelectorAll("[data-sdg-id]").forEach(el => {
+              const sdgId = parseInt(el.getAttribute("data-sdg-id"));
+              const sdg = sdgs.find(item => item.id === sdgId);
+              if (sdg) {
+                el.textContent = `SDG ${sdg.id}: ${sdg.title}`;
+              }
+            });
+          })
+          .catch(error => console.error("Error loading SDG data:", error));
+    
+        const pdfUrl = "/view-pdf/<%= uploadedFile %>";
+    
+        if (pdfUrl && document.getElementById("pdf-canvas")) {
+          pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+            return pdf.getPage(1);
+          }).then(page => {
+            const viewport = page.getViewport({ scale: 1.5 });
+            const canvas = document.getElementById("pdf-canvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            return page.render({ canvasContext: ctx, viewport: viewport }).promise;
+          }).catch(err => console.error("Error rendering PDF:", err));
+        }
+      });
+    
+      function resetForm() {
+        // Show the file upload form
+        document.getElementById("uploadForm").style.display = "block";
+      
+        // Hide the results section
+        const resultsSection = document.querySelector(".progress-div");
+        if (resultsSection) {
+          resultsSection.style.display = "none";
+        }
+      
+        // Hide the annotated PDF section
+        const pdfContainer = document.querySelector(".mt-4"); 
+        if (pdfContainer) {
+          pdfContainer.style.display = "none";
+        }
+      
+        // Hide the "Upload Another File" button
+        const uploadAnotherBtn = document.querySelector(".btn-primary.mt-3");
+        if (uploadAnotherBtn) {
+          uploadAnotherBtn.style.display = "none";
+        }
+      }
+    </script>
+    
+
+  </body>
+</html>

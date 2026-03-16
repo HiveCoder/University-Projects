@@ -1,0 +1,18 @@
+{
+    "database": {
+        "host": "localhost",
+        "username": "root",
+        "password": "",
+        "name": "sample"
+    },
+
+    "nodejs": {
+        "host":"127.0.0.1",
+        "port": 3000 
+    },
+
+    "flask":{
+        "host":"127.0.0.1",
+        "port": 5000 
+    }
+}

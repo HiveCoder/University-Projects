@@ -1,0 +1,9 @@
+# ML models (DO NOT COMMIT)
+sdg_roberta_large_model/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+venv/
+node_modules/
+.DS_Store

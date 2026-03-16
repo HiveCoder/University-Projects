@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>Upload SDG Reports</title>
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+      <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+      <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+      <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+      <link rel="stylesheet" href="assets/css/Drag--Drop-Upload-Form.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+      <link rel="stylesheet" href="assets/css/News-Cards-4-Columns-v2.css">
+      <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+   </head>
+   <body>
+    <%- include('partials/header.ejs') %>
+      <main class="page">
+         <section class="clean-block features">
+            <div class="container">
+               <div class="block-heading">
+                  <h2 class="text-info">Upload your SDG Reports</h2>
+                  <p>Please upload all your SDG-related reports as PDF files. Our AI will analyze them for alignment with each Sustainable Development Goal.<br></p>
+               </div>
+            </div>
+         </section>
+         <section class="clean-block features">
+            <div class="container">
+               <section class="dashed_upload">
+                  <div class="wrapper">
+                     <div class="drop">
+                        <div class="cont">
+                           <i class="fa fa-cloud-upload"></i>
+                           <div class="tit">Drag & Drop</div>
+                           <div class="desc">or </div>
+                           <div class="browse">click here to browse</div>
+                        </div>
+                        <output id="list"></output>
+                        <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                           <input id="files" name="file" type="file" accept=".pdf" required />
+                           <button type="submit" class="btn btn-primary">Upload Report</button>
+                        </form>
+                     </div>
+                  </div>
+               </section>
+            </div>
+         </section>
+
+         <!-- FOR PREDICTIONS -->
+         <% if (predictions && predictions.length > 0) { %>
+         <section class="clean-block">
+            <div class="container">
+               <h3 class="text-info">SDG Predictions</h3>
+               <div class="row justify-content-center mt-4">
+                  <% predictions.forEach(function(prediction) { %>
+                  <div class="mb-3">
+                     <div class="progress-title" data-sdg-id="<%= prediction.sdg %>">
+                        SDG <%= prediction.sdg %>: Loading...
+                     </div>
+                     <div class="d-flex align-items-center" style="height: 1.75rem;">
+                        <div class="progress flex-grow-1 position-relative" style="height: 1.75rem;">
+                           <div class="progress-bar bg-success d-flex align-items-center" role="progressbar"
+                              style="width: <%= prediction.percentage %>%;">
+                              <span class="position-absolute start-0 ps-3 text-black"><%= prediction.percentage.toFixed(2) %>%</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="ms-3">
+                        <p class="mt-1 text-muted small">Aligned words: <em><%= prediction.aligned_words.join(", ") %></em></p>
+                     </div>
+                  </div>
+                  <% }); %>
+               </div>
+               <% if (uploadedFile) { %>
+               <h3>Highlighted PDF:</h3>
+               <iframe src="/view-pdf/<%= uploadedFile %>" width="100%" height="600px"></iframe>
+               <% } else { %>
+               <p>No file uploaded yet.</p>
+               <% } %>
+            </div>
+         </section>
+         <% } %>
+      </main>
+      <footer class="page-footer dark">
+         <div class="footer-copyright">
+            <p>© 2024 Accounts Payable</p>
+         </div>
+      </footer>
+      <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+      <script src="assets/js/vanilla-zoom.js"></script>
+      <script src="assets/js/theme.js"></script>
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+            fetch("/sdgs.json")
+              .then(response => response.json())
+              .then(sdgs => {
+                document.querySelectorAll("[data-sdg-id]").forEach(el => {
+                  const sdgId = parseInt(el.getAttribute("data-sdg-id"));
+                  const sdg = sdgs.find(item => item.id === sdgId);
+                  if (sdg) {
+                    el.textContent = `SDG ${sdg.id}: ${sdg.title}`;
+                  }
+                });
+              })
+              .catch(error => console.error("Error loading SDG data:", error));
+         });
+      </script>
+   </body>
+</html>

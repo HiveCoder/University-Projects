@@ -1,0 +1,10 @@
+flask
+torch
+nltk
+transformers
+safetensors
+pymupdf
+pytesseract
+# Optional: uncomment if you use it later
+autocorrect
+gunicorn
